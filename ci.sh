@@ -3,7 +3,7 @@
 result=$(python -m autopep8 -r -d .)
 if [[ $result ]] ; then
   echo $result
-  echo "Please apply `python -m autopep8 -r -i .` and commit the result"
+  echo "Please run command 'python -m autopep8 -r -i .' on your local and commit the result"
   exit 1
 fi
 
