@@ -5,13 +5,10 @@
 # file. Run when README.md is changed and those changes should be reflected
 # on PyPi.
 
-import pandoc
+import pypandoc
 import os
 
-pandoc.core.PANDOC_PATH = os.environ['PANDOC_HOME']
+rst_formatted_output = pypandoc.convert_file('README.md', 'rst')
 
-doc = pandoc.Document()
-doc.markdown = open('README.md').read()
-f = open('README.txt', 'w+')
-f.write(doc.rst)
-f.close()
+with open('README.txt', 'w+') as readme:
+    readme.write(rst_formatted_output)
