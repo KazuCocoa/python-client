@@ -16,6 +16,8 @@ from typing import TYPE_CHECKING, Any, Dict, TypeVar, Union
 
 from selenium import webdriver
 
+from appium.common.logger import logger
+
 from ..mobilecommand import MobileCommand as Command
 
 if TYPE_CHECKING:
@@ -107,21 +109,32 @@ class Applications(webdriver.Remote):
         return self
 
     def launch_app(self: T) -> T:
-        """Start on the device the application specified in the desired capabilities.
+        """
+        [Deprecated]
+
+        Start on the device the application specified in the desired capabilities.
 
         Returns:
             Union['WebDriver', 'Applications']: Self instance
         """
+        logger.warning("[Deprecated] 'launch_app' is deprecated. Please use 'activate_app' instead.")
+
         self.execute(Command.LAUNCH_APP)
         return self
 
     def close_app(self: T) -> T:
-        """Stop the running application, specified in the desired capabilities, on
+        """
+        [Deprecated]
+
+        Stop the running application, specified in the desired capabilities, on
         the device.
 
         Returns:
             Union['WebDriver', 'Applications']: Self instance
         """
+
+        logger.warning("[Deprecated] 'close_app' is deprecated. Please use 'terminate_app' instead.")
+
         self.execute(Command.CLOSE_APP)
         return self
 
@@ -195,11 +208,19 @@ class Applications(webdriver.Remote):
         return self.execute(Command.GET_APP_STRINGS, data)['value']
 
     def reset(self: T) -> T:
-        """Resets the current application on the device.
+        """
+        [Deprecated]
+
+        Resets the current application on the device.
 
         Returns:
             Union['WebDriver', 'Applications']: Self instance
         """
+        logger.warning(
+            "[Deprecated] 'reset' is deprecated. "
+            "Please use terminate_app and acticate_app, or close the session and create a new session."
+        )
+
         self.execute(Command.RESET)
         return self
 

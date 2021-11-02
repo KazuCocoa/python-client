@@ -254,7 +254,7 @@ class WebDriver(
     def __init__(
         self,
         command_executor: str = 'http://127.0.0.1:4444/wd/hub',
-        desired_capabilities: Optional[Dict] = None,
+        capabilities: Optional[Dict] = None,
         browser_profile: str = None,
         proxy: str = None,
         keep_alive: bool = True,
@@ -271,7 +271,7 @@ class WebDriver(
             urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
         super().__init__(
-            AppiumConnection(command_executor, keep_alive=keep_alive), desired_capabilities, browser_profile, proxy
+            AppiumConnection(command_executor, keep_alive=keep_alive), capabilities, browser_profile, proxy
         )
 
         if hasattr(self, 'command_executor'):
@@ -375,7 +375,7 @@ class WebDriver(
     def _merge_capabilities(self, capabilities: Dict) -> Dict[str, Any]:
         """Manage capabilities whether W3C format or MJSONWP format"""
         w3c_caps = _make_w3c_caps(capabilities)
-        return {'capabilities': w3c_caps, 'desiredCapabilities': capabilities}
+        return {'capabilities': w3c_caps}
 
     def find_element(self, by: str = By.ID, value: Union[str, Dict] = None) -> MobileWebElement:
         """'Private' method used by the find_element_by_* methods.
