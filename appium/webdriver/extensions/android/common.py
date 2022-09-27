@@ -25,7 +25,7 @@ class Common(CanExecuteCommands):
         """Ends the coverage collection and pull the coverage.ec file from the device.
 
         Android only.
-        See https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/android-coverage.md
+        See https://github.com/appium/appium/blob/1.x/docs/en/writing-running-appium/android/android-coverage.md
 
         Args:
             intent: description of operation to be performed

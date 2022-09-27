@@ -36,8 +36,7 @@ class ChromedriverExecutableDirOption(SupportsCapabilities):
         Full path to the folder where chromedriver executables are located.
         This folder is used then to store the downloaded chromedriver executables
         if automatic download is enabled. Read [Automatic Chromedriver
-        Discovery](https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/
-        web/chromedriver.md#automatic-discovery-of-compatible-chromedriver)
+        Discovery](https://github.com/appium/appium-uiautomator2-driver#automatic-discovery-of-compatible-chromedriver)
         article for more details.
         """
         self.set_capability(CHROMEDRIVER_EXECUTABLE_DIR, value)

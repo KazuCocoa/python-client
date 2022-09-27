@@ -26,7 +26,7 @@ class Settings(CanExecuteCommands):
         """Returns the appium server Settings for the current session.
 
         Do not get Settings confused with Desired Capabilities, they are
-        separate concepts. See https://github.com/appium/appium/blob/master/docs/en/advanced-concepts/settings.md
+        separate concepts. See https://github.com/appium/appium/blob/master/packages/appium/docs/en/guides/settings.md
 
         Returns:
             Current settings
@@ -36,7 +36,7 @@ class Settings(CanExecuteCommands):
     def update_settings(self: T, settings: Dict[str, Any]) -> T:
         """Set settings for the current session.
 
-        For more on settings, see: https://github.com/appium/appium/blob/master/docs/en/advanced-concepts/settings.md
+        For more on settings, see: https://github.com/appium/appium/blob/master/packages/appium/docs/en/guides/settings.md
 
         Args:
             settings: dictionary of settings to apply to the current test session

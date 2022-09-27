@@ -309,8 +309,7 @@ class WebDriver(
         Override for Appium
 
         Args:
-            capabilities: Read https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/caps.md
-             for more details.
+            capabilities: Read ccapabilities in each driver repository for more details.
             browser_profile: Browser profile
         """
         if not isinstance(capabilities, (dict, AppiumOptions)):
